@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EGYPT 360 — National Development Intelligence</title>
+<meta name="description" content="National Development Intelligence & AI Command Center — 2010–2024 analytics with 2025 district outlook." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-mark">E360</div><div><strong>EGYPT 360</strong><span>Development Intelligence</span></div></div>
+    <nav id="nav">
+      <button class="nav-item active" data-page="command"><span>01</span> Command Center</button>
+      <button class="nav-item" data-page="population"><span>02</span> Population</button>
+      <button class="nav-item" data-page="economy"><span>03</span> Economy</button>
+      <button class="nav-item" data-page="education"><span>04</span> Education</button>
+      <button class="nav-item" data-page="healthcare"><span>05</span> Healthcare</button>
+      <button class="nav-item" data-page="infrastructure"><span>06</span> Infrastructure</button>
+      <button class="nav-item" data-page="safety"><span>07</span> Safety</button>
+      <button class="nav-item" data-page="cross"><span>08</span> Cross-Sector</button>
+      <button class="nav-item ai-nav" data-page="ai"><span>09</span> AI Outlook <b>2025</b></button>
+      <button class="nav-item" data-page="explorer"><span>10</span> Data Explorer</button>
+      <button class="nav-item" data-page="methodology"><span>11</span> Methodology</button>
+    </nav>
+    <div class="side-footer"><div class="status-dot"></div><div><b>Latest snapshot</b><span>2024 · 159 districts</span></div></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button id="menuBtn" class="icon-btn mobile-only">☰</button>
+      <div class="filters">
+        <label>Year<select id="yearFilter"></select></label>
+        <label>Region<select id="regionFilter"><option value="All">All Regions</option></select></label>
+        <label>Governorate<select id="govFilter"><option value="Egypt">Egypt</option></select></label>
+        <label>District<select id="districtFilter"><option value="All">All Districts</option></select></label>
+      </div>
+      <div class="top-actions"><span class="data-pill">● DATA READY</span><button id="themeBtn" class="icon-btn" title="Toggle theme">◐</button></div>
+    </header>
+
+    <section id="page-command" class="page active-page">
+      <div class="hero-head">
+        <div><p class="eyebrow">NATIONAL DEVELOPMENT INTELLIGENCE</p><h1>Egypt's Development Pulse <span id="heroYear">2024</span></h1><p id="executiveNarrative" class="lead"></p></div>
+        <div class="context-strip"><span><b id="contextPopulation">—</b> PEOPLE</span><span><b>5,500</b> LOCAL UNITS</span><span><b>27</b> GOVERNORATES</span><span><b>6</b> SECTORS</span></div>
+      </div>
+      <div id="kpiGrid" class="kpi-grid"></div>
+      <div class="grid hero-grid">
+        <article class="panel span-8"><div class="panel-head"><div><p class="eyebrow">2010 → 2024</p><h2>National Development Pulse</h2></div><span class="hint">Direction, not shared scale</span></div><div id="pulseRows" class="pulse-rows"></div></article>
+        <article class="panel span-4 danger-panel"><div class="panel-head"><div><p class="eyebrow">CURRENT PRESSURE</p><h2>Where attention is highest</h2></div></div><div id="pressureSignals" class="pressure-list"></div></article>
+      </div>
+      <div class="grid"><article class="panel span-12"><div class="panel-head"><div><p class="eyebrow">GOVERNORATE BENCHMARK</p><h2>Top & Bottom Performance</h2></div><select id="commandRankMetric" class="mini-select"><option value="poverty_rate">Poverty</option><option value="literacy_rate">Literacy</option><option value="internet_coverage">Internet</option><option value="crime_rate_per_100k">Crime /100K</option><option value="health_insurance_coverage">Health Coverage</option><option value="gdp_per_capita">GDP / Capita</option></select></div><div id="commandRanking" class="chart h420"></div></article></div>
+    </section>
+
+    <section id="page-population" class="page"><div class="section-title"><p class="eyebrow">DEMOGRAPHIC INTELLIGENCE</p><h1>Where is demographic pressure building?</h1><p>Population scale, structure, density and momentum — seen together.</p></div><div class="grid"><article class="panel span-7"><div class="panel-head"><h2>Population Momentum</h2></div><div id="populationTrend" class="chart h360"></div></article><article class="panel span-5"><div class="panel-head"><h2>Age Structure</h2></div><div id="ageStructure" class="chart h360"></div></article><article class="panel span-7"><div class="panel-head"><h2>Density × Growth — Districts</h2></div><div id="densityGrowth" class="chart h430"></div></article><article class="panel span-5"><div class="panel-head"><h2>Urban Share by Governorate</h2></div><div id="urbanRank" class="chart h430"></div></article></div></section>
+
+    <section id="page-economy" class="page"><div class="section-title"><p class="eyebrow">ECONOMIC INCLUSION</p><h1>Is economic growth translating into better living conditions?</h1></div><div class="grid"><article class="panel span-8"><div class="panel-head"><h2>GDP / Capita × Poverty</h2><span class="hint">Bubble size = population</span></div><div id="econQuadrant" class="chart h460"></div></article><article class="panel span-4"><div class="panel-head"><h2>Economic Pulse</h2></div><div id="econPulse" class="mini-pulse"></div></article><article class="panel span-6"><div class="panel-head"><h2>Governorate Ranking</h2><select id="econRankMetric" class="mini-select"><option value="gdp_per_capita">GDP / Capita</option><option value="poverty_rate">Poverty</option><option value="unemployment_rate">Unemployment</option><option value="average_income">Income</option></select></div><div id="econRank" class="chart h390"></div></article><article class="panel span-6"><div class="panel-head"><h2>Investment / Capita × GDP / Capita</h2></div><div id="incomeGdp" class="chart h390"></div></article></div></section>
+
+    <section id="page-education" class="page"><div class="section-title"><p class="eyebrow">EDUCATION OUTCOMES</p><h1>Where is system pressure hurting learning performance?</h1></div><div class="grid"><article class="panel span-8"><div class="panel-head"><h2>Student / Teacher × Exam Score</h2></div><div id="eduQuadrant" class="chart h460"></div></article><article class="panel span-4"><div class="panel-head"><h2>Education Pulse</h2></div><div id="eduPulse" class="mini-pulse"></div></article><article class="panel span-6"><div class="panel-head"><h2>Digital Access × Exam Score</h2></div><div id="eduDigital" class="chart h390"></div></article><article class="panel span-6"><div class="panel-head"><h2>Dropout Ranking</h2></div><div id="dropoutRank" class="chart h390"></div></article></div></section>
+
+    <section id="page-healthcare" class="page"><div class="section-title"><p class="eyebrow">HEALTH SYSTEM PRESSURE</p><h1>Where is healthcare under the most operational pressure?</h1></div><div class="grid"><article class="panel span-8"><div class="panel-head"><h2>Occupancy × Wait Time</h2></div><div id="healthQuadrant" class="chart h460"></div></article><article class="panel span-4"><div class="panel-head"><h2>Health Pulse</h2></div><div id="healthPulse" class="mini-pulse"></div></article><article class="panel span-7"><div class="panel-head"><h2>Vaccination ↔ Insurance Coverage</h2></div><div id="healthCoverageGap" class="chart h400"></div></article><article class="panel span-5"><div class="panel-head"><h2>Longest Wait Times</h2></div><div id="waitRank" class="chart h400"></div></article></div></section>
+
+    <section id="page-infrastructure" class="page"><div class="section-title"><p class="eyebrow">INFRASTRUCTURE COVERAGE</p><h1>Where are service gaps limiting development?</h1></div><div class="grid"><article class="panel span-8"><div class="panel-head"><h2>Coverage Matrix — Governorates</h2></div><div id="infraHeatmap" class="chart h600"></div></article><article class="panel span-4"><div class="panel-head"><h2>Coverage Progress</h2></div><div id="infraPulse" class="mini-pulse"></div></article><article class="panel span-12"><div class="panel-head"><h2>Largest Coverage Gaps</h2><select id="infraGapMetric" class="mini-select"><option value="internet_coverage">Internet</option><option value="water_coverage">Water</option><option value="electricity_coverage">Electricity</option><option value="waste_collection">Waste Collection</option></select></div><div id="infraGap" class="chart h390"></div></article></div></section>
+
+    <section id="page-safety" class="page"><div class="section-title"><p class="eyebrow">SAFETY & RESPONSE</p><h1>Where is public-safety pressure highest — and response slowest?</h1></div><div class="grid"><article class="panel span-8"><div class="panel-head"><h2>Crime Rate × Emergency Response</h2></div><div id="safetyQuadrant" class="chart h460"></div></article><article class="panel span-4"><div class="panel-head"><h2>Safety Pulse</h2></div><div id="safetyPulse" class="mini-pulse"></div></article><article class="panel span-12"><div class="panel-head"><h2>Crime Rate Ranking</h2></div><div id="crimeRank" class="chart h420"></div></article></div></section>
+
+    <section id="page-cross" class="page"><div class="section-title"><p class="eyebrow">CONNECTIONS LAB</p><h1>How are Egypt's development dimensions connected?</h1><p>Associations support diagnosis — they do not prove causality.</p></div><div class="panel"><div class="relationship-controls"><label>X metric<select id="crossX"></select></label><label>Y metric<select id="crossY"></select></label><div id="corrBadge" class="corr-badge"></div></div><div id="crossScatter" class="chart h560"></div></div><div class="panel"><div class="panel-head"><h2>Compare up to 3 Governorates</h2><select id="compareMetric" class="mini-select"></select></div><div id="compareChoices" class="chip-row"></div><div id="compareChart" class="chart h400"></div></div></section>
+
+    <section id="page-ai" class="page"><div class="section-title ai-title"><p class="eyebrow">AI OUTLOOK · 2025</p><h1>Earlier signals for targeted intervention.</h1><p>Four engines. One-year horizon. District-level prioritization. Sealed 2024 OOT validation.</p></div><div id="aiNationalCards" class="kpi-grid ai-kpis"></div><div class="grid"><article class="panel span-7"><div class="panel-head"><div><p class="eyebrow">INTERVENTION WORKLIST</p><h2>Priority Districts</h2></div><div class="inline-controls"><select id="riskBandFilter" class="mini-select"><option value="All">All bands</option><option>Critical</option><option>High</option><option>Elevated</option><option>Moderate</option><option>Low</option></select><input id="prioritySearch" class="search" placeholder="Search district…" /></div></div><div class="table-wrap"><table id="priorityTable"><thead><tr><th>#</th><th>District</th><th>Band</th><th>Score</th><th>Driver</th><th>2025 signal</th></tr></thead><tbody></tbody></table></div></article><article class="panel span-5"><div class="panel-head"><div><p class="eyebrow">MODEL GOVERNANCE</p><h2>OOT Performance</h2></div></div><div id="modelCards" class="model-cards"></div></article><article class="panel span-7"><div class="panel-head"><h2>Global AI Drivers</h2><select id="importanceTarget" class="mini-select"><option value="dropout">Dropout</option><option value="crime">Crime</option><option value="health">Health</option></select></div><div id="importanceChart" class="chart h430"></div></article><article class="panel span-5"><div class="panel-head"><h2>Priority Mix</h2></div><div id="priorityMix" class="chart h430"></div></article></div></section>
+
+    <section id="page-explorer" class="page"><div class="section-title"><p class="eyebrow">DATA EXPLORER</p><h1>Move from national story to underlying district and local-unit evidence.</h1></div><div class="panel"><div class="explorer-controls"><select id="explorerLevel" class="mini-select"><option value="District">District</option><option value="LocalUnit">Local Unit</option></select><input id="explorerSearch" class="search" placeholder="Search geography…" /><button id="exportBtn" class="action-btn">Export filtered CSV</button><span id="explorerCount" class="hint"></span></div><div class="table-wrap tall"><table id="explorerTable"><thead></thead><tbody></tbody></table></div></div></section>
+
+    <section id="page-methodology" class="page"><div class="section-title"><p class="eyebrow">METHODOLOGY & GOVERNANCE</p><h1>Every number should be defensible.</h1></div><div id="methodologyCards" class="method-grid"></div><div class="panel"><div class="panel-head"><h2>Model Cards</h2></div><div class="table-wrap"><table id="methodTable"></table></div></div></section>
+  </main>
+</div>
+<script src="vendor/plotly.min.js"></script>
+<script src="data/dashboard_bundle.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
